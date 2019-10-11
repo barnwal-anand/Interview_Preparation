@@ -1,0 +1,10 @@
+1. Send 1 KB bytes over 1 Gbps network : Takes 10 us
+2. Read sequentially from 1 Gbps Ethernet at 100 MB/s
+3. Read sequentially from SSD at 1 GB/s
+4. Read sequentially from main memory at 4 GB/s
+5. Read sequentially from disk at 30 MB/s
+6. Round trip within same data center : Takes 500 us
+7. L1 cache reference : 0.5 ns
+8. L2 cache reference : 7 ns
+9. 1 million (10^6) query per day i.e. ~10 q/s  (as 10^6 / ~10^5 = 10)
+ 
