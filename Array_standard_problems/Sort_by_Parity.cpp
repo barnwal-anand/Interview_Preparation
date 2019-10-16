@@ -3,7 +3,7 @@ i/p: [4,2,5,7]
 o/p: [4,5,2,7]
 
 Approach:
-If we only consider to place even at even place, then odd will be automatically be place at odd places.
+If we only consider to place even at even place, then odd will be automatically be placed at odd places.
 
 class Solution {
 public:
