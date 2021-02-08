@@ -1,0 +1,19 @@
+1. Inserting in heap takes log(n) time
+    >> Insert at end of array and then maintain heap structure by moving parent of node till root.
+    This is needed to maintain the complete binary tree structure.
+
+2. Deletion in heap takes log(n) time
+    >> Replace the root to be deleted by the last element and assume the last element is deleted.
+    >> Now maintain heap structure by moving down.
+
+3. Creation of heap from array is inplace.
+
+4. Creation of heap from array takes nlog(n) time, if heap is created taking one element at a time
+and heapify it [taking element from left to right].
+
+5. The above approach can be optimized by observing the fact that the leaf nodes need not to be heapified
+as they already follow the heap property.
+Also, the array representation of the complete binary tree contains the level order traversal of the tree.
+So the idea is to find the position of the last non-leaf node and perform the heapify operation of each non-leaf node in
+bottom up.
+This approach takes O(n) time.

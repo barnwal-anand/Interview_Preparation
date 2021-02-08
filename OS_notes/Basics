@@ -1,0 +1,11 @@
+RAM:
+------
+>> Programs and data that the CPU requires during execution of a program are stored in this memory.
+>> Volatile memory as the data loses when the power is turned off.
+>> DRAM - Capacitor based, used for main memory
+>> SRAM - Faster, uses circuits like D flip-flops, used for cache
+
+ROM:
+-------
+>> Stores crucial information essential to operate the system, like the program essential to boot the computer.
+>> Non-volatile, useful for storing software that is rarely changed during the life of the system, also known as firmware.
