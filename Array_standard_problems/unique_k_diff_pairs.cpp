@@ -1,7 +1,8 @@
-// find the number of unique k-diff pairs
+/*
+Find the number of unique k-diff pairs
 i/p: [3, 1, 4, 1, 5], k = 2
 o/p: 2
-
+*/
 class Solution {
 public:
     int findPairs(vector<int>& nums, int k) {

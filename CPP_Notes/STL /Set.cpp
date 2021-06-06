@@ -3,6 +3,7 @@ The value of the element cannot be modified once it is added to the set, though 
 
 begin() – Returns an iterator to the first element in the set.
 end() – Returns an iterator to the theoretical element that follows last element in the set.
+find(data) - Returns an iterator to the data.
 size() – Returns the number of elements in the set.
 max_size() – Returns the maximum number of elements that the set can hold.
 empty() – Returns whether the set is empty.

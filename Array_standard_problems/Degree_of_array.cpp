@@ -1,9 +1,10 @@
-// LeetCode: 697. Degree of an Array
+/*
+LeetCode: 697. Degree of an Array
 Degree of this array is defined as the maximum frequency of any one of its elements.
 Find the smallest possible length of subarray of nums, that has the same degree as nums.
 i/p: [1, 2, 2, 3, 1] & [1,2,2,3,1,4,2]
 o/p: 2 & 6
-
+*/
 class Solution {
 public:
     int findShortestSubArray(vector<int>& nums) {

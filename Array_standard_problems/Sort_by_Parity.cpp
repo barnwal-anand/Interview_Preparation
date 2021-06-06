@@ -1,10 +1,11 @@
-// Sort the array so that whenever A[i] is odd, i is odd; and whenever A[i] is even, i is even.
+/*
+Sort the array so that whenever A[i] is odd, i is odd; and whenever A[i] is even, i is even.
 i/p: [4,2,5,7]
 o/p: [4,5,2,7]
 
 Approach:
 If we only consider to place even at even place, then odd will be automatically be placed at odd places.
-
+*/
 class Solution {
 public:
     vector<int> sortArrayByParityII(vector<int>& A) {

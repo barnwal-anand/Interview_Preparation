@@ -3,7 +3,6 @@ compiler optimisation is needed to make your code run more efficient.
 In clang, we can use -o2 flag to enable moderate level of optimization which enables most optimizations.
 e.g "clang -o2 temp.c"
 
-
 #include <stdio.h>
 #include <signal.h>
 #include <unistd.h>

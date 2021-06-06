@@ -19,7 +19,7 @@ queue::back() -  Returns a reference to the last element of the queue
 
 
 Stack:
-------
+-------
 Stacks are a type of container adaptors with LIFO property, where a new element is added at one end and (top) an element is removed from that end only.
 
 #include <stack>

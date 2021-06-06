@@ -15,7 +15,7 @@ int numreader = 0;
 void *writer(void *wno)
 {
     sem_wait(&wrt);
-    cnt = cnt*2;
+    cnt = cnt * 2;
     printf("Writer %d modified cnt to %d\n",(*((int *)wno)),cnt);
     sem_post(&wrt);
 

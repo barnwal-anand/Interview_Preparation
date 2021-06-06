@@ -1,3 +1,30 @@
+Parsing of string:
+------------------
+Using strtok:
+-------------
+char str[] = "I am a C programmer";
+char *token = strtok(str, " ");
+
+cout << token << endl;
+while (token != NULL)
+{
+	token = strtok(NULL, " ");
+    	cout << token << endl;
+}
+
+Using stringstream:
+-------------------
+string line = "I am a C++ programmer";
+vector <string> tokens;
+stringstream ss(line); //stringstream object supports << and >> operator to read and write data to buffer
+string word;
+// Tokenizing w.r.t. space ' '
+while(getline(ss, word, ' '))
+{
+    tokens.push_back(word);
+}
+
+
 // Discards/clear the input buffer.
 cin.sync();
 
@@ -22,31 +49,6 @@ int main()
     // Unpack the elements returned by foo
     tie(a, b, cc) = foo(5, 10);
 }
-
-Parsing of string:
-------------------
-In C:
-char str[] = "Geeks for Geeks";
-char *token;
-char *rest = str;
-
-while ((token = strtok_r(rest, " ", &rest)))
-    printf("%s\n", token);
-
-In C++:
-string line = "GeeksForGeeks is a must try";
-vector <string> tokens;
-stringstream check1(line);
-string word;
-// Tokenizing w.r.t. space ' '
-while(getline(check1, word, ' '))
-{
-    tokens.push_back(word);
-}
-
-or
-while (check1 >> word)
-    tokens.push_back(word);
 
 
 BitSet:

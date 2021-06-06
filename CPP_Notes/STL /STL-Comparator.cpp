@@ -22,7 +22,7 @@ bool sortByVal(const pair<int, int>& a, const pair<int, int>& b)
 void sortByFreq(int arr[], int n)
 {
 	unordered_map<int, int> m;
-	vector<pair<int, int> > v;
+	vector<pair<int, int>> v;
 
 	for (int i = 0; i < n; ++i) {
 

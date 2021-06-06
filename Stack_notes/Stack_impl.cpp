@@ -11,7 +11,7 @@ public:
       Stack(int n) {
             size = n;
             top = -1;
-            arr = new int(size);
+            arr = new int[size];
       }
       bool push(int);
       int pop();

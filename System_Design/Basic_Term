@@ -1,0 +1,4 @@
+VPS (Virtual Private System):
+-----------------------------
+Super fast server with lots of RAM, lots of CPU, lots of disk and they chop it up into illusion of multiple servers,
+i.e. VPS using something called Hypervisor(run multiple Virtual machine in a physical machine).
