@@ -19,7 +19,7 @@ public:
 
 void Heap::createMaxHeap(vector<int> &arr)
 {
-      int it = (arr.size() - 1) / 2; // last non leaf node
+      int it = (arr.size() - 1) / 2 - 1; // last non leaf node
       for (; it >= 0; it--) {
             maxHeapify(arr, it);
       }
