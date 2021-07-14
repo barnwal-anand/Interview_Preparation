@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 #define CHAR_SIZE 26
+void printAutoSuggestions(struct Trie *root, const string query);
+void printAutoSuggestionsUtil(struct Trie *root, const string key);
+bool isLastNode(struct Trie* root);
 
 struct Trie {
 	bool isEndOfWord;
@@ -50,12 +53,62 @@ bool search(struct Trie *root, string word) {
 
 int main() {
 	struct Trie *root = getTrieNode();
-	insert(root, "cat");
+	insert(root, "hello");
 	insert(root, "dog");
-	insert(root, "cow");
+	insert(root, "hell");
+	insert(root, "cat");
+	insert(root, "a");
+	insert(root, "hel");
+	insert(root, "help");
+	insert(root, "helps");
+	insert(root, "helping");
 
-	cout << search(root, "cow") << endl;
+	cout << search(root, "cat") << endl;
 	cout << search(root, "car") << endl;
 
+	printAutoSuggestions(root, "hel");
+
 	return 0;
+}
+
+void printAutoSuggestions(struct Trie *root, const string query)
+{
+	struct Trie *cur = root;
+
+	for(int it = 0; it < query.length(); it++) {
+		int index = query[it] - 'a';
+		if (!cur->child[index]) {
+			// query does not exist in trie
+			cout << query << " - does not exist in trie" << endl;
+			return;
+		}
+		cur = cur->child[index];
+	}
+
+	printAutoSuggestionsUtil(cur, query);
+}
+
+void printAutoSuggestionsUtil(struct Trie *root, const string key)
+{
+	if (root->isEndOfWord) {
+		cout << key << endl;
+	}
+	if (isLastNode(root)) {
+		return;
+	}
+
+	for (int it = 0; it < CHAR_SIZE; it++) {
+		if (root->child[it]) {
+			char ch = it + 'a';
+			printAutoSuggestionsUtil(root->child[it], key + ch);
+		}
+	}
+}
+
+bool isLastNode(struct Trie* root)
+{
+	for (int it = 0; it < CHAR_SIZE; it++)
+		if (root->child[it])
+			return 0;
+	return 1;
 }
