@@ -12,7 +12,7 @@ where the values of variables may be unpredictable and vary
 depending on the timings of context switches of the processes or threads.
 
 Thread Synchronization Problem
----------------------------------
+------------------------------
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -81,12 +81,12 @@ pthread_mutex_t lock;
 
 void* trythis(void* arg)
 {
-      pthread_mutex_lock(&lock);
+    pthread_mutex_lock(&lock);
 	counter += 1;
 	printf("\n Job %d has started\n", counter);
 	sleep(5);
 	printf("\n Job %d has finished\n", counter);
-      pthread_mutex_unlock(&lock);
+    pthread_mutex_unlock(&lock);
 }
 
 int main(void)
@@ -94,10 +94,10 @@ int main(void)
 	int i = 0;
 	int error;
 
-      if (pthread_mutex_init(&lock, NULL) != 0) {
-            printf("\n mutex init has failed\n");
-            return;
-      }
+    if (pthread_mutex_init(&lock, NULL) != 0) {
+        printf("\n mutex init has failed\n");
+        return;
+    }
 	while (i++ < 2) {
 		error = pthread_create(&(tid[i]), NULL, &trythis, NULL);
 		if (error != 0)
@@ -106,7 +106,7 @@ int main(void)
 
 	pthread_join(tid[0], NULL);
 	pthread_join(tid[1], NULL);
-      pthread_mutex_destroy(&lock);
+    pthread_mutex_destroy(&lock);
 	return 0;
 }
 o/p:

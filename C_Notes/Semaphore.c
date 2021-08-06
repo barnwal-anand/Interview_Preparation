@@ -37,7 +37,7 @@ P(Semaphore s)
 	s.value = s.value - 1;
 	if (s.value < 0) {
             //p is a process which is currently executing
-	      q.push(p); //add process to the waiting queue
+	    q.push(p); //add process to the waiting queue
 		block();
 	}
 	else
@@ -48,7 +48,7 @@ V(Semaphore s)
 {
 	s.value = s.value + 1;
 	if (s.value <= 0) {
-	      Process p = q.pop(); //release process from queue
+	    Process p = q.pop(); //release process from queue
 		wakeup(p);
 	}
 	else
