@@ -31,3 +31,33 @@ public:
 	    return count;
     }
 };
+
+/*
+One more variation
+Given an unsorted array A of size N that contains only non-negative integers, find a continuous sub-array which adds to a given number S.
+
+N = 5, S = 12
+A[] = {1,2,3,7,5}
+Output: 2 4
+Explanation: The sum of elements from 2nd position to 4th position is 12.
+*/
+
+vector<int> subarraySum(int arr[], int n, int s)
+{
+    int prefix_sum = 0;
+    int start_index = 0;
+        
+    for (int it = 0; it < n; it++) {
+        prefix_sum += arr[it];
+            
+        while (prefix_sum >= s) {
+            if (prefix_sum == s) {
+                return {start_index + 1, it + 1};
+            }
+            prefix_sum -= arr[start_index];
+            start_index++;
+        }
+    }
+        
+    return {-1};
+}
