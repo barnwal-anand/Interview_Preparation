@@ -1,5 +1,6 @@
 /*
-Given an array of strings. The array has both empty and non-empty strings. All non-empty strings are in sorted order. Empty strings can be present anywhere between non-empty strings.
+Given an array of strings. The array has both empty and non-empty strings. All non-empty strings are in sorted order.
+Empty strings can be present anywhere between non-empty strings.
 
 Input :  arr[] =  {"for", "", "", "", "geeks",
                    "ide", "", "practice", "" ,
@@ -18,7 +19,7 @@ int searchStr(string arr[], int n, string key) {
 	int h = n-1;
 
 	while (l <= h) {
-            int mid = (l + h) / 2;
+        int mid = (l + h) / 2;
 
 		if (arr[mid] == "") {
 			int left = mid - 1;
